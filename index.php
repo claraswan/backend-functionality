@@ -34,7 +34,7 @@
 
      <div class="header">
         <div class="logo"><img src="assets/logo.jpg" alt="orange hive logo"></div>
-        <div class="nav"><h5> Menu </h5></div>
+        <div class="nav"><h5>Menu</h5></div>
     </div>
 
     <div class="footer">

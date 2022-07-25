@@ -17,20 +17,40 @@
 
     <div class="header">
         <div class="logo"><img src="assets/logo.jpg" alt="orange hive logo"></div>
-        <div class="nav"><h5> Menu </h5></div>
+        <div class="nav"><h5>Menu</h5></div>
     </div>
 
     <div class="content">
 
         <h2>Kontakt</h2>
-        <!-- Erstelle einen Kontaktformular -->
-        <form action='formulardaten.php' method='post'></p>
+        <!-- 2.1: Erstelle einen Kontaktformular -->
+        <form action='formulardaten.php' method='post'>
+
             <p>Vorname: <input name='vorname' type='text'></p>
+
             <p>Nachname: <input name='nachname' type='text'></p>
+
             <p>E-Mail: <input name='email' type='text'></p>
-            <p>Bewertung: <input name='bewertung' type='select'></p>
-            <p>Nachricht: <input name='email' type='text'></p>
+
+            <!-- 2.1: Bewertung soll über eine Schleife erstellt werden -->
+            <select>
+            <?php
+
+                define('MAX_OPTIONS', 6);
+
+                for($optionIndex=0; $optionIndex <= 5; $optionIndex++){
+                    echo '<option>' . $optionIndex . '</option>';
+                }
+
+            ?>
+            </select>
+
+            <textarea rows = "5" cols = "50" name = "Nachricht">
+            Geben Sie hier Ihre Nachricht ein
+            </textarea>
+
             <input type='submit' name='submit' value='Submit'>
+
         </form>
 
     </div>

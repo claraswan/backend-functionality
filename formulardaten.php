@@ -18,23 +18,23 @@
 
     <div class="content">
         <?php
-
+            // 2.2: Kontaktdaten mit POST ausgeben
             if (isset($_POST['submit'])) { //if form has been submitted
                 
-                '<dl>
+                echo ('<dl>
 
                     <dt>Vorname</dt> 
-                    <dd>' . $_POST['vorname'] . '</dd>' ;
-                    '<dt>Nachname</dt>
-                    <dd>' . $_POST['nachname'] . '</dd>' ;
-                    '<dt>E-Mail</dt> 
-                    <dd>' . $_POST['email'] . '</dd>' ;
-                    '<dt>Bewertung</dt> 
-                    <dd>' . $_POST['bewertung'] . '</dd>' ;
-                    '<dt>Nachricht</dt>
-                    <dd>' . $_POST['nachricht'] . '</dd>' ;
+                    <dd>' . $_POST['vorname'] . '</dd>
+                    <dt>Nachname</dt>
+                    <dd>' . $_POST['nachname'] . '</dd>
+                    <dt>E-Mail</dt> 
+                    <dd>' . $_POST['email'] . '</dd>
+                    <dt>Bewertung</dt> 
+                    <dd>' . $_POST['bewertung'] . '</dd> 
+                    <dt>Nachricht</dt>
+                    <dd>' . $_POST['nachricht'] . '</dd>
 
-                '</dl>'
+                </dl>');
             }
             
         ?>
