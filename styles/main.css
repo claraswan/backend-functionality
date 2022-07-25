@@ -11,14 +11,15 @@ img {
     height: 160px;
 } 
 
-.author {
+.nav {
     padding-right: 24px;
 }
 
-.author, .logo {
+.nav, .logo {
     display: flex;
     align-items: center;
     gap: 16px;
+    border: 1px solid white;
 }
 
 .header {
@@ -26,7 +27,6 @@ img {
     display: flex;
     justify-content: space-between;
     padding: 8px;
-
   }
 
 .footer {
