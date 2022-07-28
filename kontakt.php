@@ -36,8 +36,6 @@
             <select>
             <?php
 
-                define('MAX_OPTIONS', 6);
-
                 for($optionIndex=0; $optionIndex <= 5; $optionIndex++){
                     echo '<option>' . $optionIndex . '</option>';
                 }
@@ -45,13 +43,25 @@
             ?>
             </select>
 
-            <textarea rows = "5" cols = "50" name = "Nachricht">
-            Geben Sie hier Ihre Nachricht ein
+            <textarea rows = "5" cols = "20" name = "Nachricht">
+            Geben Sie hier ihre Nachricht ein
             </textarea>
 
             <input type='submit' name='submit' value='Submit'>
 
         </form>
+
+        <!-- 2.3: Speicher die Formulardaten auch in einer Text-Datei -->
+        <?php
+
+        $file = 'formulardaten.txt';
+        // output POST array data into $data variable
+        $data .= print_r($_POST);
+        // put data into the formulardaten.txt file
+        file_put_contents($file, $data);
+
+        ?>
+
 
     </div>
 

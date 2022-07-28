@@ -11,7 +11,7 @@
     
     <?php
        
-       // GET Parameter mit 'page' als Name 
+       // 1.3: GET Parameter mit 'page' als Name 
        // und Seitennamen als Wert erstellen
        $page = $_GET['page'];
 
@@ -19,7 +19,7 @@
        if($page) {
             include($_GET['page']);
        }
-       // Fals der Wert des GET-Parameters
+       // 1.4: Fals der Wert des GET-Parameters
        // nicht bekannt sein soll
        else {
             // Fehlermeldung
