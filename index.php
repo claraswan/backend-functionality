@@ -11,13 +11,20 @@
     
     <?php
        
-       // 1.3: GET Parameter mit 'page' als Name 
+       // 1.3: GET Parameter mit 'page' als Name
        // und Seitennamen als Wert erstellen
        $page = $_GET['page'];
 
-       //
-       if($page) {
-            include($_GET['page']);
+       // if page parameter has been given, 
+       if (isset(($_GET['page']))) {
+            // redirect to the page specified
+            $host  = $_SERVER['HTTP_HOST'];
+            $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+            $extra = '$page';
+            header("Location: http://$host$uri/$extra");
+
+            // make sure none of rest of script executes after redirect
+            exit;
        }
        // 1.4: Fals der Wert des GET-Parameters
        // nicht bekannt sein soll
@@ -34,8 +41,13 @@
 
      <div class="header">
         <div class="logo"><img src="assets/logo.jpg" alt="orange hive logo"></div>
-        <div class="nav"><h5>Menu</h5></div>
-    </div>
+        <div class="nav"><nav>
+            <a href="/kontakt.php">Kontakt</a> |
+            <a href="/page1.php">Page 1</a> |
+            <a href="/page2.php">Page 2</a> 
+        </nav> 
+        </div>
+        </div>
 
     <div class="footer">
         <div class="link1">
