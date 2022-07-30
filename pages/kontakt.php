@@ -11,13 +11,14 @@
 
 <body>
 
-    <?php   
-        include('../index.php');
-    ?>
-
     <div class="header">
         <div class="logo"><img src="assets/logo.jpg" alt="orange hive logo"></div>
-        <div class="nav"><h5>Menu</h5></div>
+        <div class="nav"><nav>
+            <a href="/kontakt.php">Kontakt</a> |
+            <a href="/page1.php">Page 1</a> |
+            <a href="/page2.php">Page 2</a> 
+        </nav> 
+        </div>
     </div>
 
     <div class="content">
@@ -44,11 +45,9 @@
             ?>
             </select>
 
-            <textarea rows = "5" cols = "20" name = "Nachricht">
-            Geben Sie hier ihre Nachricht ein
-            </textarea>
+            <p><textarea rows = "5" cols = "20" name = "Nachricht">Geben Sie hier ihre Nachricht ein</textarea></p>
 
-            <input type='submit' name='submit' value='Submit'>
+            <p><input type='submit' name='submit' value='Submit'></p>
 1
         </form>
 
