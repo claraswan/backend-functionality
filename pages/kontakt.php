@@ -3,15 +3,9 @@
 
 <head>
 
-    <?php include("inc/head-info.php");?>
-
 </head>
 
 <body>
-
-    <?php include("inc/header.php");?>
-
-    <div class="content">
 
         <h2>Kontakt</h2>
 
@@ -35,17 +29,17 @@
             ?>
             </select></p>
 
-            <p>Nachricht: <textarea rows = "5" cols = 24" name = "Nachricht">Geben Sie hier ihre Nachricht ein</textarea></p>
+            <p>Nachricht: <textarea rows = "5" cols = "24" name = "Nachricht">Geben Sie hier ihre Nachricht ein</textarea></p>
 
             <p><input type='submit' name='submit' value='Submit'></p>
-1
+
         </form>
 
         <?php
 
         // 2.2: Daten mit Definitionsliste auf der Seite ausgeben
-
-        if ($_SERVER["REQUEST_METHOD"] == "POST") { //if form has been submitted
+        
+        if (isset($_POST["submit"])) { //if form has been submitted
                 
             echo ('<dl>
 
@@ -74,11 +68,6 @@
         file_put_contents($file, $data);
 
         ?>
-
-
-    </div>
-
-    <?php include("inc/footer.php");?>
 
 </body>
 
