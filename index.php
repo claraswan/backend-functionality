@@ -29,7 +29,7 @@
                 include('pages/page2.php');
             break;
             case 'daten':
-                include('pages/daten.php');
+                include('daten.php');
             break;
             default:
                 if ($_GET['page'] == '') {
@@ -45,9 +45,7 @@
         ?>
     </div>
     
-    <div class="footer">
-        <?php include("inc/footer.php");?>
-    </div>
+    <?php include("inc/footer.php");?>
 
 </body>
 </html>
