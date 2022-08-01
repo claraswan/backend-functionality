@@ -33,7 +33,7 @@
             break;
             default:
                 if ($_GET['page'] == '') {
-                    include('pages/home.php');
+                    include($_SERVER['PHP_SELF']);
                 }
                 else {
                     echo '<p>Fehler 404 - Seite nicht gefunden</p>';
@@ -45,8 +45,9 @@
         ?>
     </div>
     
-    
-    <?php include("inc/footer.php");?>
+    <div class="footer">
+        <?php include("inc/footer.php");?>
+    </div>
 
 </body>
 </html>
