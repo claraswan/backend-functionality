@@ -3,6 +3,8 @@
 
 <head>
 
+    <?php include("inc/head-info.php");?>
+
 </head>
 
 <body>
@@ -10,7 +12,7 @@
         <h2>Kontakt</h2>
 
         <!-- 2.1: Erstelle einen Kontaktformular -->
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+        <form action="pages/daten.php" method="post">
 
             <p>Vorname: <input name="vorname" type="text"></p>
 
@@ -19,7 +21,7 @@
             <p>E-Mail: <input name="email" type="text"></p>
 
             <!-- 2.1: Bewertung soll über eine Schleife erstellt werden -->
-            <p>Bewertung: <select>
+            <p>Bewertung: <select name="bewertung">
             <?php
 
                 for($option=0; $option <= 5; $option++){
@@ -29,7 +31,7 @@
             ?>
             </select></p>
 
-            <p>Nachricht: <textarea rows = "5" cols = "24" name = "Nachricht">Geben Sie hier ihre Nachricht ein</textarea></p>
+            <p>Nachricht: <textarea rows = "5" cols = "24" name = "nachricht"></textarea></p>
 
             <p><input type='submit' name='submit' value='Submit'></p>
 
@@ -39,23 +41,23 @@
 
         // 2.2: Daten mit Definitionsliste auf der Seite ausgeben
         
-        if (isset($_POST["submit"])) { //if form has been submitted
+        // if (isset($_POST["submit"])) { //if form has been submitted
                 
-            echo ('<dl>
+        //     echo ('<dl>
 
-                <dt>Vorname</dt> 
-                <dd>' . $_POST['vorname'] . '</dd>
-                <dt>Nachname</dt>
-                <dd>' . $_POST['nachname'] . '</dd>
-                <dt>E-Mail</dt> 
-                <dd>' . $_POST['email'] . '</dd>
-                <dt>Bewertung</dt> 
-                <dd>' . $_POST['bewertung'] . '</dd> 
-                <dt>Nachricht</dt>
-                <dd>' . $_POST['nachricht'] . '</dd>
+        //         <dt>Vorname</dt> 
+        //         <dd>' . $_POST['vorname'] . '</dd>
+        //         <dt>Nachname</dt>
+        //         <dd>' . $_POST['nachname'] . '</dd>
+        //         <dt>E-Mail</dt> 
+        //         <dd>' . $_POST['email'] . '</dd>
+        //         <dt>Bewertung</dt> 
+        //         <dd>' . $_POST['bewertung'] . '</dd> 
+        //         <dt>Nachricht</dt>
+        //         <dd>' . $_POST['nachricht'] . '</dd>
 
-            </dl>');
-        }
+        //     </dl>');
+        // }
 
         // 2.3: Speicher die Formulardaten in einer Text-Datei
 

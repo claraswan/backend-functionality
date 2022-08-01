@@ -9,13 +9,9 @@
 
 <body>
 
-    <?php include("inc/header.php");?>
-
     <div class="content">
         <h2>Home</h2>
     </div>
-
-    <?php include("inc/footer.php");?>
 
 </body>
 
