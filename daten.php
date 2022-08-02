@@ -31,16 +31,18 @@
      
             // 2.3: Speicher die Formulardaten in einer Text-Datei
 
-            // jeded übermittelte Formular Datei soll UNIX-Timestamp haben:
+            // jeded übermittelte Formular Datei soll UNIX-Timestamp haben
             // und soll im eignenem Verzeichnis gespeichert sein
-            // echo __DIR__ . '/daten/' . time() . '_formulardaten.txt';
             $file = __DIR__ . '/daten/' . time() . '_formulardaten.txt';
+
             // output POST array data into $data variable
-            $data = 'Vorname: ' . $_POST['vorname'] . '\n' .
-                    'Nachname: ' . $_POST['nachname'] . '\n' .
-                    'E-Mail: ' . $_POST['email'] . '\n' .
-                    'Bewertung: ' . $_POST['bewertung'] . '\n' .
+            // can't get newline to work though
+            $data = 'Vorname: ' . $_POST['vorname'] . chr(10) .
+                    'Nachname: ' . $_POST['nachname'] . chr(10) .
+                    'E-Mail: ' . $_POST['email'] . chr(10) .
+                    'Bewertung: ' . $_POST['bewertung'] . chr(10) .
                     'Nachricht: ' . $_POST['nachricht'];
+
             // put that data into the formulardaten.txt file in the daten directory
             file_put_contents($file, $data);
         ?>
