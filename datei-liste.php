@@ -9,11 +9,16 @@ $files = scandir($dir);
 ?>
 
 <!-- List each of the files from that array in an html list -->
+<!-- You should be able to click on each of the file names, bringing you to that page under detail.php -->
 <ul class="daten"> 
 
     <?php
     foreach ($files as $file) {
-        echo '<li>'. $file . '</li>';
+        echo ('<li>
+
+        <a href="detail.php?file=' . $file . '">' . $file . '</a>
+        
+        </li>');
     }
     ?>
 
