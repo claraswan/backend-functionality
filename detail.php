@@ -1,5 +1,4 @@
-
-    <?php 
+<?php 
 
     // if there is a query-parameter called file, then display the content of that file 
 
@@ -14,6 +13,6 @@
         //     }
         // }
 
-    ?>
+?>
     
 

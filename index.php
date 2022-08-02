@@ -28,6 +28,9 @@
                 case 'page2':
                     include('pages/page2.php');
                 break;
+                case 'daten':
+                    include('daten.php');
+                break;
                 case 'datei-liste':
                     include('datei-liste.php');
                 break;

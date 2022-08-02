@@ -1,9 +1,8 @@
-<!-- 2.4: Die vorhandenen Text-Dateien vom Kontaktformular auflisten -->
 
 <?php
 
 // Create an array called $files from the files in the /daten/ directory
-$dir    = __DIR__ . '/daten/';
+$dir    = '../daten/';
 $files = scandir($dir);
 
 ?>
@@ -12,7 +11,7 @@ $files = scandir($dir);
 <ul> 
 
     <?php
-    // 2.5: Der Klick auf einer der Dateien führt auf eine neue Seite welche den Dateinamen als Query-Parameter übergeben wird
+
     foreach ($files as $file) {
         echo ('<li>
 

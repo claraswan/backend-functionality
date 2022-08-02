@@ -1,17 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-    
-<head>
 
-    <?php include("inc/head-info.php");?>
 
-</head>
-
-<body>
-
-    <?php include("inc/header.php");?>
-
-    <div class="content">
         <!-- 2.2: Daten mit Definitionsliste auf der Seite ausgeben -->
         <?php
 
@@ -38,24 +26,19 @@
 
             // jeded übermittelte Formular Datei soll UNIX-Timestamp haben
             // und soll im eignenem Verzeichnis gespeichert sein
+
             $file = __DIR__ . '/daten/' . time() . '_formulardaten.txt';
 
             // output POST array data into $data variable
-            // can't get newline to work though
+
             $data = 'Vorname: ' . $_POST['vorname'] . chr(10) .
                     'Nachname: ' . $_POST['nachname'] . chr(10) .
                     'E-Mail: ' . $_POST['email'] . chr(10) .
                     'Bewertung: ' . $_POST['bewertung'] . chr(10) .
                     'Nachricht: ' . $_POST['nachricht'];
 
-            // put that data into the formulardaten.txt file in the daten directory
+            // put that data into the [timestamp]formulardaten.txt file in the daten directory
+
             file_put_contents($file, $data);
         ?>
-    
-    </div>
-
-    <?php include("inc/footer.php");?>
-
-</body>
-
-</html>
+   
