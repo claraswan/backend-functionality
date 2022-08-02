@@ -28,8 +28,8 @@
                 case 'page2':
                     include('pages/page2.php');
                 break;
-                case 'daten':
-                    include('daten.php');
+                case 'datei-liste':
+                    include('datei-liste.php');
                 break;
                 default:
                     if ($_GET['page'] == '') {

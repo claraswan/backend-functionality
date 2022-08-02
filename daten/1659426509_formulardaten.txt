@@ -1,1 +1,0 @@
-Vorname: clara\nNachname: swanson\nE-Mail: clar@mail\nBewertung: 5\nNachricht: hello world
