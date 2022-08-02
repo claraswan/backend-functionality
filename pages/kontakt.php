@@ -3,14 +3,14 @@
         <!-- 2.1: Erstelle einen Kontaktformular -->
         <form action="daten.php" method="post">
 
-            <p>Vorname: <input name="vorname" type="text"></p>
+            <p>Vorname: <span class="required">* </span><input name="vorname" type="text" aria-describedby="required-description" required></p>
 
-            <p>Nachname: <input name="nachname" type="text"></p>
+            <p>Nachname: <span class="required">* </span><input name="nachname" type="text" aria-describedby="required-description" required></p>
 
-            <p>E-Mail: <input name="email" type="text"></p>
+            <p>E-Mail: <span class="required">* </span><input name="email" type="text" aria-describedby="required-description" required></p>
 
             <!-- 2.1: Bewertung soll über eine Schleife erstellt werden -->
-            <p>Bewertung: <select name="bewertung">
+            <p>Bewertung: <span class="required">* </span><select name="bewertung" aria-describedby="required-description" required>
             <?php
 
                 for($option=0; $option <= 5; $option++){
@@ -24,4 +24,18 @@
 
             <p><input type="submit" name="submit" value="Submit"></p>
 
+            <!-- 3.1: Erstelle Pflichfelder mit *, "required", und aria für Barrierefreiheit -->
+            <p aria-hidden="true" id="required-description">
+                <span class="required">* </span>Pflichfelder
+            </p>
+
         </form>
+
+        
+        <!-- if (true) {
+                $errMsg = "Bitte fulle das Feld aus.";  
+                echo $errMsg;  
+            }
+            else {
+                $name = $_POST["vorname"];  
+} -->

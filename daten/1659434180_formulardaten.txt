@@ -1,5 +1,0 @@
-Vorname: Bogus
-Nachname: Name
-E-Mail: bogeyman@mail
-Bewertung: 2
-Nachricht: It's me

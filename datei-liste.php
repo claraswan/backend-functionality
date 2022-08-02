@@ -9,10 +9,10 @@ $files = scandir($dir);
 ?>
 
 <!-- List each of the files from that array in an html list -->
-<!-- You should be able to click on each of the file names, bringing you to that page under detail.php -->
 <ul class="daten"> 
 
     <?php
+    // 2.5: Der Klick auf einer der Dateien führt auf eine neue Seite welche den Dateinamen als Query-Parameter übergeben wird
     foreach ($files as $file) {
         echo ('<li>
 

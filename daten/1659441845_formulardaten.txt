@@ -1,0 +1,5 @@
+Vorname: PHP
+Nachname: Elephant
+E-Mail: elephant@mail
+Bewertung: 5
+Nachricht: Hallo
