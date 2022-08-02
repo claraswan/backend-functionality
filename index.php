@@ -31,6 +31,26 @@
                 case 'datei-liste':
                     include('datei-liste.php');
                 break;
+                case 'detail':
+                    include('detail.php');
+
+                    // if there is also a query-parameter called file, then display the content of that file 
+                    $dir    = __DIR__ . '/daten/';
+                    $files = scandir($dir);
+
+                    foreach ($files as $file_name) {
+                        if ($_GET['file'] == $file_name) {
+                            $result = file(__DIR__ . '/daten/' . $file_name);
+                            $contents = implode("\n",$result);
+                            echo "<pre>".$contents."</pre>";
+                        } else {
+                            echo '<p>Fehler 404 - Seite nicht gefunden</p>';
+                            header($_SERVER["SERVER_PROTOCOL"] . " 404 Not Found");
+                            break;
+                        }
+                    }
+
+                break;
                 default:
                     if ($_GET['page'] == '') {
                         include($_SERVER['PHP_SELF']);

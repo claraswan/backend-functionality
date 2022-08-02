@@ -16,7 +16,7 @@ $files = scandir($dir);
     foreach ($files as $file) {
         echo ('<li>
 
-        <a href="detail.php?file=' . $file . '">' . $file . '</a>
+        <a href="index.php?page=detail&file=' . $file . '">' . $file . '</a>
         
         </li>');
     }
