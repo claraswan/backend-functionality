@@ -41,11 +41,12 @@
                                 $result = file('../daten/' . $file_name);
                                 $contents = implode("\n",$result);
                                 echo "<pre>".$contents."</pre>";
-                            } else {
-                                // 2.6: Sollte die Datei im query-parameter nicht existieren zeige die Fehlermeldung (ohne file_exists gemacht)
-                                echo '<p>Fehler 404 - Seite nicht gefunden</p>';
-                                header($_SERVER["SERVER_PROTOCOL"] . " 404 Not Found");
-                                break;
+                            // } else {
+                            //     // 2.6: Sollte die Datei im query-parameter nicht existieren zeige die Fehlermeldung (ohne file_exists gemacht)
+                            //     echo '<p>Fehler 404 - Seite nicht gefunden</p>';
+                            //     header($_SERVER["SERVER_PROTOCOL"] . " 404 Not Found");
+                            //     break;
+                            // } rather do if file exists then the above, if not then the 404 error
                             }
                         }
                         break;

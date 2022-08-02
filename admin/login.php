@@ -1,22 +1,52 @@
-<!-- Erstelle eine Datei login.php für den Administrationsbereich -->
+<!-- 3.6: Erstelle eine Datei login.php für den Administrationsbereich -->
 
-<h2>Login</h2>
+<style> 
 
-<form action="" method="post">
+.form {
+    display: flex;
+    margin-right: auto;
+    align-items: center;
+    justify-content: center;
+}
 
-        <p>Login: <input name="user" type="text" required></p>
+.whole_form {
+    background: #2b2b2f;
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+    justify-content: center;
+    padding: 8px 20px;
+}
 
-        <p>Passwort: <input name="passwort" type="password" required></p>
+ h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
 
-        <p><input type="submit" name="login" value="Login"></p>
+</style>
 
-</form>
+<div class="whole_form">
+    <h2>Login</h2>
+
+    <div class="form">
+        <form action="" method="post">
+
+                <p>Login: <input name="user" type="text" required></p>
+
+                <p>Passwort: <input name="passwort" type="password" required></p>
+
+                <p><input type="submit" name="login" value="Login"></p>
+
+        </form>
+    </div>
+</div>
 
 <?php
 
-    // Logik für das Loginformular
+    // 3.7: Logik für das Loginformular
 
-    if(isset($_POST['user']) && isset($_POST['passwort'])){ // check for presence of both
+    if (isset($_POST['user']) && isset($_POST['passwort'])) { // check for presence of both
 
         $username = $_POST['user'];
         $password = $_POST['passwort'];
