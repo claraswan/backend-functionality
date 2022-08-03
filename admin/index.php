@@ -21,16 +21,16 @@
             if (isset($_GET['page'])) {
                 switch ($_GET['page']) {
                     case 'contactform':
-                        include('contactform.php');
+                        include('pages/contactform.php');
                     break;
                     case 'login':
                         include('login.php');
                     break;
                     case 'overview':
-                        include('overview.php');
+                        include('pages/overview.php');
                     break;
                     case 'detail':
-                        include('detail.php');
+                        include('pages/detail.php');
 
                         // if there is also a query-parameter called file, then display the content of that file 
                         $dir    = '../daten/';
@@ -49,18 +49,19 @@
                             // } 
                             }
                         
-                        break;
-                        default:
-                            if ($_GET['page'] == '') {
-                                include('overview.php');
-                            }
-                            else {
-                                echo '<p>Fehler 404 - Seite nicht gefunden</p>';
-                                header($_SERVER["SERVER_PROTOCOL"] . " 404 Not Found");
-                            }
                     break;
-                    } 
-                    
+                    default:
+                        if ($_GET['page'] == '') {
+                            include('pages/overview.php');
+                        }
+                        else {
+                            echo '<p>Fehler 404 - Seite nicht gefunden</p>';
+                            header($_SERVER["SERVER_PROTOCOL"] . " 404 Not Found");
+                        }
+                    break;
+                } 
+            } else {
+                include('pages/overview.php');
             }
 
         ?>
