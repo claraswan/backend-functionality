@@ -26,6 +26,15 @@
                         include('pages/contactform.php');
                     break;
 
+                    case 'news_maske':
+                        include('pages/news_maske.php');
+                    break;
+
+                    case 'news_einträge':
+                        include('pages/news_einträge.php');
+                    break;
+
+
                     case 'home':
                         include('pages/home.php');
                     break;
