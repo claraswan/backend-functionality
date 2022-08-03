@@ -31,9 +31,9 @@
     <div class="form">
         <form action="" method="post">
 
-                <p>Username: <input name="user" type="text" required></p>
+                <p><input name="user" type="text" placeholder="Username" required></p>
 
-                <p>Passwort: <input name="passwort" type="password" required></p>
+                <p><input name="passwort" type="password" placeholder="Passwort" required></p>
 
                 <p><input type="submit" name="login" value="Login"></p>
 
@@ -43,21 +43,29 @@
 
 <?php
 
+    // function logUserIn($user, $pass) {
+    //     session_start();
+    //     $_SESSION["user"] = $user;
+    //     $_SESSION["passwort"] = $pass;
+    //     header('location: index.php?page=overview');
+    // }
+
     // 3.7: Logik für das Loginformular
 
     if (isset($_POST['user']) && isset($_POST['passwort'])) { // check for presence of both
 
         $username = $_POST['user'];
         $password = $_POST['passwort'];
+        
 
         if ($username == 'admin' && $password == 'IamLegend2o19'){
-            header('location: index.php?page=overview');
+            include ('session.php');
         } else if ($username == 'rashid' && $password == 'R45h1d') {
-            header('location: index.php?page=overview');
+            include ('session.php');
         } else if ($username == 'stefan' && $password == 'St3f4n') {
-            header('location: index.php?page=overview');
+            include ('session.php');
         } else if ($username == 'sebastian' && $password == 's3b45st1an') {
-            header('location: index.php?page=overview');
+            include ('session.php');
         } else {
             $error = 'Login oder Passwort inkorrekt';
             echo $error;

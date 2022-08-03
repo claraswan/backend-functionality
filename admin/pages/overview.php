@@ -1,3 +1,4 @@
+
 <style>
     .button {
         background-color: black;
@@ -10,3 +11,8 @@
 </style>
 
 <a class="button" href="index.php?page=contactform">Kontaktformular</a>
+
+<?php
+    echo (session_status());
+    phpinfo();
+?>
