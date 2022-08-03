@@ -8,11 +8,9 @@ So after session start on every admin page, the page will remember our login det
 <?php
 
     function logUserIn($user, $pass) {
-        if (session_status() == PHP_SESSION_NONE) {
-            session_start();
-        }
-        $_SESSION["user"] = $user;
-        $_SESSION["passwort"] = $pass;
+        session_start();
+        $_SESSION["username"] = $user;
+        $_SESSION["password"] = $pass;
         header('location: index.php?page=overview');
     }
     

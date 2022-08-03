@@ -1,4 +1,6 @@
-
+<?php
+    session_start();
+?>
 <style>
     .button {
         background-color: black;
@@ -14,5 +16,4 @@
 
 <?php
     echo (session_status());
-    phpinfo();
 ?>

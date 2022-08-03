@@ -31,9 +31,9 @@
     <div class="form">
         <form action="" method="post">
 
-                <p><input name="user" type="text" placeholder="Username" required></p>
+                <p><input name="username" type="text" placeholder="Username" required></p>
 
-                <p><input name="passwort" type="password" placeholder="Passwort" required></p>
+                <p><input name="password" type="password" placeholder="Passwort" required></p>
 
                 <p><input type="submit" name="login" value="Login"></p>
 
@@ -52,12 +52,11 @@
 
     // 3.7: Logik für das Loginformular
 
-    if (isset($_POST['user']) && isset($_POST['passwort'])) { // check for presence of both
+    if (isset($_POST['username']) && isset($_POST['password'])) { // check for presence of both
 
-        $username = $_POST['user'];
-        $password = $_POST['passwort'];
+        $username = $_POST['username'];
+        $password = $_POST['password'];
         
-
         if ($username == 'admin' && $password == 'IamLegend2o19'){
             include ('session.php');
         } else if ($username == 'rashid' && $password == 'R45h1d') {

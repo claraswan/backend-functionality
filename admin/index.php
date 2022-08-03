@@ -21,15 +21,16 @@
             if (isset($_GET['page'])) {
                 switch ($_GET['page']) {
                     case 'contactform':
-                        if (session_status() == 2) {
-                            echo 'hi';
-                            // include('pages/contactform.php');
-                        } else if (session_status() == 1) {
-                            header('location: index.php?page=login');
-                        }
+                        include('pages/contactform.php');
+                        // if (session_status() == PHP_SESSION_NONE) {
+                        //     header('location: index.php?page=login');
+                        // }
                     break;
                     case 'home':
-                        include('home.php');
+                        include('pages/home.php');
+                    break;
+                    case 'logout':
+                        include('pages/logout.php');
                     break;
                     case 'login':
                         include('login.php');
