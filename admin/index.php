@@ -37,17 +37,22 @@
                         $files = scandir($dir);
 
                         foreach ($files as $file_name) {
+
                             if ($_GET['file'] == $file_name) {
+
                                 $result = file('../daten/' . $file_name);
                                 $contents = implode("\n",$result);
                                 echo "<pre>".$contents."</pre>";
-                             } // else {
+
+                             } 
+                             
+                             // else {
                             //     // 2.6: Sollte die Datei im query-parameter nicht existieren zeige die Fehlermeldung (ohne file_exists gemacht)
                             //     echo '<p>Fehler 404 - Seite nicht gefunden</p>';
                             //     header($_SERVER["SERVER_PROTOCOL"] . " 404 Not Found");
                             //     break;
                             // } 
-                            }
+                        }
                         
                     break;
                     default:

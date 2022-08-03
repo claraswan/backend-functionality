@@ -13,7 +13,6 @@
     background: #2b2b2f;
     display: flex;
     flex-direction: column;
-    margin-right: auto;
     justify-content: center;
     padding: 8px 20px;
 }
@@ -32,7 +31,7 @@
     <div class="form">
         <form action="" method="post">
 
-                <p>Login: <input name="user" type="text" required></p>
+                <p>Username: <input name="user" type="text" required></p>
 
                 <p>Passwort: <input name="passwort" type="password" required></p>
 
