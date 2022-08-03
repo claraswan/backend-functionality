@@ -2,12 +2,13 @@
     session_start();
     if(!isset($_SESSION['username'])) {
         echo 'Bitte erst <a style="text-decoration: underline" href="index.php?page=login">' . 'einloggen!</a>';
+        die;
     }
-    die;
+    
 ?>
 
 <?php
-echo $_SESSION['username'];
+
 // Create an array called $files from the files in the /daten/ directory
 $dir    = '../daten/';
 $files = scandir($dir);
@@ -36,6 +37,10 @@ $files = scandir($dir);
 
     .special {
         text-decoration: underline;
+    }
+
+    li {
+        list-style-type: none;
     }
 
 </style>
