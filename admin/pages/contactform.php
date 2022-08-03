@@ -1,32 +1,39 @@
 <?php
+
     session_start();
+
     if(!isset($_SESSION['username'])) {
+
         echo 'Bitte erst <a style="text-decoration: underline" href="index.php?page=login">' . 'einloggen!</a>';
         die;
+        
     }
     
 ?>
 
 <?php
 
-// Create an array called $files from the files in the /daten/ directory
-$dir    = '../daten/';
-$files = scandir($dir);
+    // Create an array called $files from the files in the /daten/ directory
+    $dir    = __DIR__. '/daten/';
+    $files = scandir($dir);
 
 ?>
 
-<!-- List each of the files from that array in an html list -->
 <ul> 
 
+    <!-- List each of the files from that array in an html list -->
     <?php
 
-    foreach ($files as $file) {
-        echo ('<li>
+        foreach ($files as $file) {
+            if ($file !== '.' && $file !== '..') {
+                echo ('<li>
 
-        <a href="index.php?page=detail&file=' . $file . '">' . $file . '</a>
-        
-        </li>');
-    }
+                <a href="index.php?page=detail&file=' . $file . '">' . $file . '</a>
+                
+                </li>');
+            }
+            
+        }
     
     ?>
 

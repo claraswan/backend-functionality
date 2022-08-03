@@ -1,12 +1,6 @@
-
-<!-- What to do: Have a session started that saves the session variable and allows for us to access 
-it on every single page inside our website 
-
-So after session start on every admin page, the page will remember our login details -->
-
-
 <?php
 
+    // 4.2: Implementiere Session-Handling für die Adminseiten in einer eigenen Script-Datei
     function logUserIn($user, $pass) {
         session_start();
         $_SESSION["username"] = $user;
@@ -16,11 +10,4 @@ So after session start on every admin page, the page will remember our login det
     
     logUserIn($username, $password);
 
-    // function isLoggedIn() {
-    //     if (empty($_SESSION)) {
-    //         header('location: index.php?page=login');
-    //     } else {
-    //         header('location: index.php');
-    //     }
-    // }
 ?>

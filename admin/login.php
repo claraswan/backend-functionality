@@ -2,33 +2,35 @@
 
 <style> 
 
-.form {
-    display: flex;
-    margin-right: auto;
-    align-items: center;
-    justify-content: center;
-}
+    .form {
+        display: flex;
+        margin-right: auto;
+        align-items: center;
+        justify-content: center;
+    }
 
-.whole_form {
-    background: #2b2b2f;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 8px 20px;
-}
+    .whole_form {
+        background: #2b2b2f;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 8px 20px;
+    }
 
- h2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
- }
+    h2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
 </style>
 
 <div class="whole_form">
+
     <h2>Login</h2>
 
     <div class="form">
+
         <form action="" method="post">
 
                 <p><input name="username" type="text" placeholder="Username" required></p>
@@ -38,17 +40,12 @@
                 <p><input type="submit" name="login" value="Login"></p>
 
         </form>
+
     </div>
+
 </div>
 
 <?php
-
-    // function logUserIn($user, $pass) {
-    //     session_start();
-    //     $_SESSION["user"] = $user;
-    //     $_SESSION["passwort"] = $pass;
-    //     header('location: index.php?page=overview');
-    // }
 
     // 3.7: Logik für das Loginformular
 
