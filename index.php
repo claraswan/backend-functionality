@@ -55,7 +55,13 @@
 
                     // 2.6: How to implement this??
                     // if (file_exists($_GET['file'])) {
+                        // if ($_GET['file'] == $file_name) {
 
+                        //     $result = file(__DIR__ . '/daten/' . $file_name);
+                        //     $contents = implode("\n",$result);
+                        //     echo "<pre>".$contents."</pre>";
+
+                        // }
                     // } else {
 
                     //     echo '<p>Fehler 404 - Seite nicht gefunden</p>';
