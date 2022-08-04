@@ -9,7 +9,6 @@
 
     }
 
-    // Create an array called $files from the files in the /daten/ directory
     $dir    = __DIR__. '/news_eintraege/';
     $files = scandir($dir);
 
@@ -25,11 +24,13 @@
         list-style-type: none;
         text-align: left;
     }
+
     .button:hover {
         border: solid 0.1em black;
         color: white;
         background: none;
     }
+
     .button {
         background: #2b2b2f;
         border: none;
@@ -37,23 +38,19 @@
         margin-top: 42px;
         font-size: 14px;
     }
-    .delete {
-        font-size: 10px;
-        border: solid 0.1px white;
-        margin-right: 14px;
-    }
+
     a {
-        margin: 18px 8px;
+        margin: 18px 4px;
     }
 
 </style>
 
 
+<!-- 5.2: Auflistung der vorhandenen News-Einträge mit einen Button zum Erstellen einer neuen News -->
 
 <h2>News-Einträge</h2>
-<ul> 
+<ul style="padding-left: 0px;"> 
 
-    <!-- List each of the files from that array in a list -->
     <?php
 
         foreach ($files as $file) {
@@ -62,7 +59,7 @@
 
                 echo ('<li>
 
-                <a href="index.php?page=delete&file=' . $file . '">
+                <a href="index.php?page=news_maske&file=' . $file . '">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <line x1="4" y1="7" x2="20" y2="7" />
@@ -73,10 +70,20 @@
                     </svg>
                 </a>
 
-                <a href="index.php?page=news_detail&file=' . $file . '">' . $file . '</a>
+                <a href="index.php?page=edit&file=' . $file . '">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M9 7h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3" />
+                    <path d="M9 15h3l8.5 -8.5a1.5 1.5 0 0 0 -3 -3l-8.5 8.5v3" />
+                    <line x1="16" y1="5" x2="19" y2="8" />
+                    </svg>
+                </a>
+
+
+                <a style= margin-left:18px; href="index.php?page=news_detail&file=' . $file . '">' . $file . '</a>
                 
                 </li>');
-                
+
             }
             
         }

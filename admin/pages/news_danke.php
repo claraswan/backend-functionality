@@ -9,8 +9,8 @@
 
     }
 
-    echo 'Was für einen Meisterwerk! <br>';
-    echo '<br> Schau dir die <a style="text-decoration: underline" href="index.php?page=news_auflistung">' . 'anderen Beiträge</a> an';
+    echo '<p>Wow, was für einen Meisterwerk!</p> <br>';
+    echo '<br> <p>Schau dir die <a style="text-decoration: underline" href="index.php?page=news_auflistung">' . 'anderen Beiträge</a> an</p>';
 
 
     if (isset($_POST['submit'])) {
@@ -22,7 +22,7 @@
         );
 
         $json_news = json_encode($news);
-        $file = __DIR__ . '/news_eintraege/' . $_POST['ueberschrift'] . '.txt';
+        $file = __DIR__ . '/news_eintraege/' . $_POST['ueberschrift'];
 
         file_put_contents($file, $json_news);
 

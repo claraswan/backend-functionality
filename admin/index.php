@@ -27,7 +27,34 @@
                     break;
 
                     case 'news_maske':
-                        include('pages/news_maske.php');
+                        
+                        if (isset($_GET['file'])) {
+
+                            include('pages/news_maske.php');
+
+                            $file    = 'pages/news_eintraege/' . $_GET['file'] ;
+                            
+                            // 5.5: Implementiere eine Editiermaske
+                            
+                            if (file_exists($file)) {
+
+                               echo 'hi';
+
+                                // fill in the existing form with the saved data so that you can edit the file
+
+                            } else {
+                               
+                                echo '<p>Fehler 404 - Seite nicht gefunden</p>';
+                                header($_SERVER["SERVER_PROTOCOL"] . " 404 Not Found");
+                                break;  
+
+                            }
+                        } else {
+
+                            include('pages/news_maske.php');
+
+                        }
+
                     break;
 
                     case 'news_danke':
@@ -55,7 +82,6 @@
                     break;
                     
                     case 'detail':
-                        include('pages/detail.php');
 
                         if (isset($_GET['file'])) {
 
@@ -79,12 +105,13 @@
                     break;
 
                     case 'delete':
-                        include('pages/delete.php');
 
                         if (isset($_GET['file'])) {
 
                             $file    = 'pages/news_eintraege/' . $_GET['file'] ;
-
+                            
+                            // 5.3: Gib eine Funktion die News zu löschen
+                            
                             if (file_exists($file)) {
                                
                                 unlink($file);
