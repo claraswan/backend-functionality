@@ -30,17 +30,18 @@
                         
                         if (isset($_GET['file'])) {
 
-                            include('pages/news_maske.php');
+                            include('pages/news_edit.php');
 
-                            $file    = 'pages/news_eintraege/' . $_GET['file'] ;
+                            $file = 'pages/news_eintraege/' . $_GET['file'] ;
                             
                             // 5.5: Implementiere eine Editiermaske
                             
                             if (file_exists($file)) {
 
-                               echo 'hi';
+                                echo 'hi';
+                                header('location: index.php?page=news_edit&file=' . $file);
+                                // fill in the existing form on page with the saved data as value so that you can seemingly edit the file
 
-                                // fill in the existing form with the saved data so that you can edit the file
 
                             } else {
                                
@@ -57,8 +58,22 @@
 
                     break;
 
+                    case 'news_edit':
+                        
+                        if (isset($_GET['file'])) {
+                            include('pages/news_edit.php');
+                            $file = 'pages/news_eintraege/' . $_GET['file'];
+                            $_SESSION['old_file'] = $file;
+                        } 
+
+                    break;
+
                     case 'news_danke':
                         include('pages/news_danke.php');
+                    break;
+
+                    case 'news_danke_edit':
+                        include('pages/news_danke_edit.php');
                     break;
 
                     case 'home':
