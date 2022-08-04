@@ -78,6 +78,29 @@
                         
                     break;
 
+                    case 'delete':
+                        include('pages/delete.php');
+
+                        if (isset($_GET['file'])) {
+
+                            $file    = 'pages/news_eintraege/' . $_GET['file'] ;
+
+                            if (file_exists($file)) {
+                               
+                                unlink($file);
+                                header('location: index.php?page=news_auflistung');
+
+                            } else {
+                               
+                                echo '<p>Fehler 404 - Seite nicht gefunden</p>';
+                                header($_SERVER["SERVER_PROTOCOL"] . " 404 Not Found");
+                                break;  
+
+                            }
+                        }
+                        
+                    break;
+
                     default:
 
                         if ($_GET['page'] == '') {

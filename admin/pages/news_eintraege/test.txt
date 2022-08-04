@@ -1,3 +1,0 @@
-Vorname: test
-Nachname: 2022-08-09
-E-Mail: testing testing, 1, 2, 3...
