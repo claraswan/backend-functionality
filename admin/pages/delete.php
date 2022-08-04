@@ -9,5 +9,6 @@
 
     }
 
-?>
+    unlink('test.html');
 
+?>

@@ -30,13 +30,16 @@
                         include('pages/news_maske.php');
                     break;
 
-                    case 'news_einträge':
-                        include('pages/news_einträge.php');
+                    case 'news_danke':
+                        include('pages/news_danke.php');
                     break;
-
 
                     case 'home':
                         include('pages/home.php');
+                    break;
+
+                    case 'news_auflistung':
+                        include('pages/news_auflistung.php');
                     break;
 
                     case 'logout':

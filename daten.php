@@ -26,7 +26,7 @@
         // jeded übermittelte Formular Datei soll UNIX-Timestamp haben
         // und soll im eignenem Verzeichnis gespeichert sein
 
-        $file = __DIR__ . '/admin/daten/' . time() . '_formulardaten.txt';
+        $file = __DIR__ . '/admin/pages/daten/' . time() . '_formulardaten.txt';
 
         // output POST array data into $data variable
 
@@ -41,4 +41,3 @@
         file_put_contents($file, $data);
 
 ?>
-   

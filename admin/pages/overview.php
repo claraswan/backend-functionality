@@ -12,12 +12,16 @@
 
 <style>
 
-    .button {
-        background-color: black;
+    .button:hover {
+        border: solid 0.1em black;
         color: white;
+        background: none;
+    }
+    .button {
+        background: #2b2b2f;
+        border: none;
         padding: 20px 34px;
-        text-align: center;
-        font-size: 20px;
+        font-size: 18px;
     }
     
 </style>

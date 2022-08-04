@@ -13,7 +13,7 @@
 
 <h2>Der News-Macher</h2>
 
-<form action="" method="post">
+<form action="index.php?page=news_danke" method="post">
 
     <p>Überschrift: <input name="ueberschrift" type="text" required></p>
 
@@ -25,18 +25,3 @@
 
 </form>
 
-<?php
-
-    if (isset($_POST['submit'])) {
-
-        $file = __DIR__ . '/news_eintraege/' . $_POST['ueberschrift'] . '.txt';
-
-        $data = 'Vorname: ' . $_POST['ueberschrift'] . chr(10) .
-            'Nachname: ' . $_POST['datum'] . chr(10) .
-            'E-Mail: ' . $_POST['text'];
-
-        file_put_contents($file, $data);
-    }
-    
-
-?>
