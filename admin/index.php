@@ -54,29 +54,23 @@
                     case 'detail':
                         include('pages/detail.php');
 
-                        // if there is also a query-parameter called file, then display the content of that file 
-                        $dir    = 'pages/daten/';
-                        $files = scandir($dir);
+                        if (isset($_GET['file'])) {
 
-                        foreach ($files as $file_name) {
+                            $file    = 'pages/daten/' . $_GET['file'] ;
 
-                            if ($_GET['file'] == $file_name) {
+                            if (file_exists($file)) {
 
-                                $result = file('pages/daten/' . $file_name);
+                                $result = file($file);
                                 $contents = implode("\n",$result);
                                 echo "<pre>".$contents."</pre>";
 
-                             } 
-                             
-                             // else {
-                            //     // 2.6: Sollte die Datei im query-parameter nicht existieren zeige die Fehlermeldung (ohne file_exists gemacht)
+                            } else{
 
-                            //     How to implement file exists into the above??
+                                echo '<p>Fehler 404 - Seite nicht gefunden</p>';
+                                header($_SERVER["SERVER_PROTOCOL"] . " 404 Not Found");
+                                break;  
 
-                            //     echo '<p>Fehler 404 - Seite nicht gefunden</p>';
-                            //     header($_SERVER["SERVER_PROTOCOL"] . " 404 Not Found");
-                            //     break;
-                            // } 
+                            }
                         }
                         
                     break;
