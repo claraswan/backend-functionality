@@ -30,7 +30,7 @@
 
     <p>Überschrift: <input name="ueberschrift" type="text" value="<?php echo $ueberschrift ?>" required></p>
 
-    <p>Datum: <input name="datum" type="text" value="<?php echo $datum ?>" required></p>
+    <p>Datum: <input name="datum" type="date" value="<?php echo $datum ?>" required></p>
 
     <p>Text: <textarea rows="5" cols="24" name="text" required><?php echo $text ?></textarea></p>
 
