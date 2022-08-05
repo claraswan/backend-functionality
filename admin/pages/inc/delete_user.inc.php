@@ -9,14 +9,21 @@
 
     }
     
-
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $firstName = $_POST['firstName'];
-    $lastName = $_POST['LastName'];
-    $email = $_POST['email'];
-
     require_once 'dbh.inc.php';
+    $user = $_GET['user'];
 
-    
+    $sql = "DELETE FROM users WHERE usersUsername='$user'";
+
+    if (mysqli_query($conn, $sql)) {
+       
+        header('location: __DIR__ . ../../index.php?page=user_admin');
+
+    } else {
+
+        echo "Fehler beim Löschen: " . mysqli_error($conn);
+
+    }
+
+    mysqli_close($conn);
+
 ?>

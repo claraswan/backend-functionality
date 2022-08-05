@@ -24,9 +24,11 @@
         // output data of each row
         while ($row = mysqli_fetch_assoc($result)) {
 
+            $stringResult = $row["usersUsername"];
+            
             echo ('<li>
 
-                <a href="index.php?page=delete_user.inc">
+                <a href="index.php?page=delete_user.inc&user=' . $stringResult . '">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <line x1="4" y1="7" x2="20" y2="7" />
@@ -37,7 +39,7 @@
                     </svg>
                     </a>
 
-                <a class="edit" href="index.php?page=edit_user.inc">
+                <a class="edit" href="index.php?page=edit_user.inc&user=' . $stringResult . '">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <path d="M9 7h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3" />

@@ -20,10 +20,13 @@
     $sql = "INSERT INTO users (usersUsername, usersPassword, usersFirstName, usersLastName, usersEmail) VALUES ('$username', '$password', '$firstName', '$lastName', '$email')";
 
     if (mysqli_query($conn, $sql)) {
-        echo 'Neuer User geaddet';
+
         header('location: ../../index.php?page=user_admin');
+
     } else {
+
         echo 'Error: ' . $sql . '<br>' . mysqli_error($conn);
+        
     }
 
     mysqli_close($conn);
