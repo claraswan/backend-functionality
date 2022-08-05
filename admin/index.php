@@ -61,10 +61,16 @@
                     case 'news_edit':
                         
                         if (isset($_GET['file'])) {
+
                             include('pages/news_edit.php');
                             $file = 'pages/news_eintraege/' . $_GET['file'];
                             $_SESSION['old_file'] = $file;
-                        } 
+
+                        } else {
+
+                            header('location: index.php?page=news_auflistung');
+
+                        }
 
                     break;
 
@@ -86,6 +92,26 @@
 
                     case 'user_admin':
                         include('pages/user_admin.php');
+                    break;
+
+                    case 'edit_user':
+                        include('pages/edit_user.php');
+                    break;
+
+                    case 'edit_user.inc':
+
+                        if (isset($_GET['id'])) {
+
+                            include('pages/inc/edit_user.inc.php');
+                            $id = $_GET['id'];
+                            $_SESSION['id'] = $id;
+
+                        } else {
+
+                            header('location: index.php?page=user_admin');
+
+                        }
+
                     break;
 
                     case 'create_user':

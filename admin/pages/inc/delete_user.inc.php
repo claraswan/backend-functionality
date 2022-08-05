@@ -12,7 +12,7 @@
     require_once 'dbh.inc.php';
     $user = $_GET['user'];
 
-    $sql = "DELETE FROM users WHERE usersUsername='$user'";
+    $sql = "UPDATE users SET deleted_at = CURRENT_TIMESTAMP WHERE usersUsername='$user'";
 
     if (mysqli_query($conn, $sql)) {
        
