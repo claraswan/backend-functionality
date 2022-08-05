@@ -77,7 +77,7 @@
                     break;
 
                     case 'home':
-                        include('pages/home.php');
+                        include('pages/overview.php');
                     break;
 
                     case 'news_auflistung':

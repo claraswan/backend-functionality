@@ -8,7 +8,8 @@
 
             <a href="index.php?page=home">Home</a> |
             <a href="index.php?page=news">News</a> |
-            <a href="index.php?page=kontakt">Kontakt</a>
+            <a href="index.php?page=kontakt">Kontakt</a> |
+            <a href="admin/index.php?page=login">Login</a> 
             
         </nav> 
         

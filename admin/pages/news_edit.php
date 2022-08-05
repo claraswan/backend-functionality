@@ -15,11 +15,24 @@
 
 <form action="index.php?page=news_danke_edit" method="post">
 
-    <p>Überschrift: <input name="ueberschrift" type="text" value="$_POST[ueberschrift]" required></p>
+    <?php
 
-    <p>Datum: <input name="datum" type="date" value="$_POST[datum]" required></p>
+        $file = $_GET['file'];
 
-    <p>Text: <textarea rows="5" cols="24" name="text" value="$_POST[text]" required></textarea></p>
+        $jsonContents = file_get_contents(__DIR__ . '/news_eintraege/' . $file);
+        $decodedContents = json_decode($jsonContents, true);
+
+        $ueberschrift = $decodedContents['ueberschrift'];
+        $datum = $decodedContents['datum'];
+        $text = $decodedContents['text'];
+
+    ?>
+
+    <p>Überschrift: <input name="ueberschrift" type="text" value="<?php echo $ueberschrift ?>" required></p>
+
+    <p>Datum: <input name="datum" type="date" value="<?php echo $datum ?>" required></p>
+
+    <p>Text: <textarea rows="5" cols="24" name="text" required><?php echo $text ?></textarea></p>
 
     <p><input type="submit" name="submit" value="Fertig"></p>
 
