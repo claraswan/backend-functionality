@@ -84,6 +84,18 @@
                         include('pages/news_auflistung.php');
                     break;
 
+                    case 'user_admin':
+                        include('pages/user_admin.php');
+                    break;
+
+                    case 'create_user':
+                        include('pages/create_user.php');
+                    break;
+
+                    case 'create_user.inc':
+                        include('pages/inc/create_user.inc.php');
+                    break;
+
                     case 'logout':
                         include('pages/logout.php');
                     break;
