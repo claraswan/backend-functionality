@@ -95,6 +95,10 @@
                     case 'create_user.inc':
                         include('pages/inc/create_user.inc.php');
                     break;
+                    
+                    case 'delete_user.inc':
+                        include('pages/inc/delete_user.inc.php');
+                    break;
 
                     case 'logout':
                         include('pages/logout.php');
