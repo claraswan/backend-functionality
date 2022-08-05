@@ -13,7 +13,7 @@
 
 <h2>Der News-Macher</h2>
 
-<form action="index.php?page=news_danke" method="post">
+<form action="index.php?page=news_maske.inc" method="post">
 
     <p>Überschrift: <input name="ueberschrift" type="text" required></p>
 

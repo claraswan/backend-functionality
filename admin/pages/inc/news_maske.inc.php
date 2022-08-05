@@ -22,7 +22,7 @@
         );
 
         $json_news = json_encode($news);
-        $file = __DIR__ . '/news_eintraege/' . $_POST['ueberschrift'];
+        $file = 'C:\xampp\htdocs\oh-aufgaben\admin\pages/news_eintraege/' . $_POST['ueberschrift'];
 
         file_put_contents($file, $json_news);
 

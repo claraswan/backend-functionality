@@ -74,12 +74,12 @@
 
                     break;
 
-                    case 'news_danke':
-                        include('pages/news_danke.php');
+                    case 'news_maske.inc':
+                        include('pages/inc/news_maske.inc.php');
                     break;
 
-                    case 'news_danke_edit':
-                        include('pages/news_danke_edit.php');
+                    case 'news_edit.inc':
+                        include('pages/inc/news_edit.inc.php');
                     break;
 
                     case 'home':
