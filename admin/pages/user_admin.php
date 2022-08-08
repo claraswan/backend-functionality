@@ -18,11 +18,21 @@
 <?php
 
     require_once 'inc/dbh.inc.php';
-    $sql = "SELECT usersUsername, usersId FROM users WHERE deleted_at is NULL";
+    $sql = "SELECT usersUsername, usersId, usersFirstName, usersLastName FROM users WHERE deleted_at is NULL";
    
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) > 0) {
+
+        echo ('<table cellspacing=8>
+
+        <tr>
+            <th>Optionen</th>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Vorname</th>
+            <th>Nachname</th>
+        </tr>');
 
         // output data of each row (=each person)
         while ($row = mysqli_fetch_assoc($result)) {
@@ -30,9 +40,11 @@
             $idResult = $row["usersId"];
             $userResult = $row["usersUsername"];
 
-            echo ('<li>
+            echo ('
 
-                <a href="index.php?page=delete_user.inc&user=' . $userResult . '">
+            <tr>
+            
+                <td> <a href="index.php?page=delete_user.inc&user=' . $userResult . '">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <line x1="4" y1="7" x2="20" y2="7" />
@@ -41,24 +53,32 @@
                     <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
                     <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
                     </svg>
-                    </a>
-
-                <a class="edit" href="index.php?page=edit_user&id=' . $idResult . '">
+                    </a> 
+                     <a class="edit" href="index.php?page=edit_user&id=' . $idResult . '">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <path d="M9 7h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3" />
                     <path d="M9 15h3l8.5 -8.5a1.5 1.5 0 0 0 -3 -3l-8.5 8.5v3" />
                     <line x1="16" y1="5" x2="19" y2="8" />
                     </svg>
-                </a>'
+                    </a> </td>
 
-                . $row["usersUsername"] 
+                <td>' . $row["usersId"] . '</td>
+                <td>' . $row["usersUsername"] . '</td>
+                <td>' . $row["usersFirstName"] . '</td>
+                <td>' . $row["usersLastName"] . '</td>
+                
 
-                . '</li>');
+                </tr>'
+
+                );
 
         }
 
+        echo '</table>';
+
       } 
+
       else {
 
         echo "Keine Benutzer";
@@ -86,42 +106,20 @@
         margin-top: 60px;
         text-align: center;
     }
+    table td{
+        background: #2b2b2f;
+        font-size: 14px;
+        padding: 4px;
+    }
     .text {
         font-size: 14px;
         font-style: normal;
     }
-
-    .special {
-        text-decoration: underline;
-    }
-
-    li {
-        list-style-type: none;
-        text-align: left;
-    }
-
-    .button:hover {
-        border: solid 0.1em black;
-        color: white;
-        background: none;
-    }
-
-    .button {
-        background: #2b2b2f;
-        border: none;
-        padding: 12px 24px;
-        margin-top: 42px;
-        font-size: 14px;
-    }
-
     a {
-        margin: 18px 4px;
+        margin: 18px 6px;
     }
 
-    .edit {
-        margin-right: 16px;
-    }
-
+  
 </style>
 
 <!-- 6.3: „Benutzer anlegen“ Button -->
