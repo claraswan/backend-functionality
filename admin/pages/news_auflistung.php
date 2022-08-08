@@ -14,6 +14,7 @@
 
 ?>
 
+<!-- 5.2: Auflistung der vorhandenen News-Einträge, mit Button zum Erstellen einer neuen News -->
 <style>
 
     .special {
@@ -56,6 +57,8 @@
 <ul style="padding-left: 0px;"> 
 
     <?php
+
+// 5.3 und 5.5: Funktion die News zu löschen und zu editen
 
         foreach ($files as $file) {
 

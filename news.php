@@ -6,6 +6,7 @@
 
 </style>
 
+<!-- 5.4: Im Frontend sollen nun die Inhalte der einzelnen News ausgegeben werden  -->
 <h2>News Page</h2>
 
 <ul style="padding-left: 0px;"> 

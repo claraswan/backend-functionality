@@ -11,6 +11,8 @@
 
 ?>
 
+<!-- 5.1: Entwickle im Admin-Bereich eine Pflegemaske über die neue News-Einträge gespeichert werden können -->
+
 <h2>Der News-Macher</h2>
 
 <form action="index.php?page=news_maske.inc" method="post">

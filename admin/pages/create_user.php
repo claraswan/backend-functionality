@@ -31,6 +31,8 @@
     
 </style>
 
+<!-- 6.3: Formular zum Anlegen eines Benutzers -->
+
 <h2>Benutzer anlegen</h2>
 
 <form action="pages/inc/create_user.inc.php" method="post">

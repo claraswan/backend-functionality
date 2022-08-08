@@ -12,6 +12,8 @@
     $id = $_SESSION['id'];
 ?>
 
+<!-- 6.4: eine Editiermaske für die Benutzerdaten -->
+
 <h2>Benutzer editieren</h2>
 
 <form action="index.php?page=edit_user.inc&id=<?php echo $id ?>" method="post">

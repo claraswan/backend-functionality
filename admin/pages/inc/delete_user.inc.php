@@ -8,10 +8,14 @@
         die;
 
     }
+
+    // 6.5: Benutzer können gelöscht werden
     
     require_once 'dbh.inc.php';
     $user = $_GET['user'];
 
+    // 6.6: Soft delete
+    
     $sql = "UPDATE users SET deleted_at = CURRENT_TIMESTAMP WHERE usersUsername='$user'";
 
     if (mysqli_query($conn, $sql)) {

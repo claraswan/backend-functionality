@@ -12,7 +12,9 @@
 ?>
 
 <h2>Benutzer</h2>
-<!-- List users in a table -->
+
+<!-- 6.2: Erstelle eine Benutzerverwaltung im Admin-Bereich -->
+
 <?php
 
     require_once 'inc/dbh.inc.php';
@@ -22,7 +24,7 @@
 
     if (mysqli_num_rows($result) > 0) {
 
-        // output data of each row
+        // output data of each row (=each person)
         while ($row = mysqli_fetch_assoc($result)) {
 
             $idResult = $row["usersId"];
@@ -122,5 +124,5 @@
 
 </style>
 
-
+<!-- 6.3: „Benutzer anlegen“ Button -->
 <a class="button" href="index.php?page=create_user"><div class="text">Benutzer anlegen</div></a>
