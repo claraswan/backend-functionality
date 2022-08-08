@@ -3,6 +3,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- This page title var still doesn't work btw :( -->
-<title><?php print $page_title;?></title>
+<title>OH-Aufgaben</title>
 
 <link rel="stylesheet" href="styles/main.css">
