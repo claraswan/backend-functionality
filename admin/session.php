@@ -8,6 +8,6 @@
         header('location: index.php?page=overview');
     }
     
-    logUserIn($username, $password);
+    logUserIn($postUsername, $postPassword);
 
 ?>

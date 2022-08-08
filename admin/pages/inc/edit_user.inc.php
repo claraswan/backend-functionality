@@ -11,7 +11,6 @@
 
     // 6.4: eine Editiermaske für die Benutzerdaten
 
-    $id = $_SESSION['id'];
     require_once 'dbh.inc.php';
 
     $id = $_GET['id'];

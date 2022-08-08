@@ -12,7 +12,7 @@
 
 <body>
 
-    <?php include("header.php");?>
+    <?php include("admin_header.php");?>
 
     <div class="content">
 
@@ -38,7 +38,6 @@
                             
                             if (file_exists($file)) {
 
-                                echo 'hi';
                                 header('location: index.php?page=news_edit&file=' . $file);
                                 // fill in the existing form on page with the saved data as value so that you can seemingly edit the file
 

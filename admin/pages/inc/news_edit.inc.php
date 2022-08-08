@@ -23,7 +23,7 @@
         unlink($_SESSION['old_file']);
         file_put_contents($file, $json_news);
         
-        // The key difference between news_danke_edit and news_danke:
+        // The key difference between news_maske.inc and news_edit.inc:
         
         header('location: index.php?page=news_auflistung');
     }

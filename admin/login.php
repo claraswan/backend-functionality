@@ -51,22 +51,40 @@
 
     if (isset($_POST['username']) && isset($_POST['password'])) { // check for presence of both
 
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        
-        if ($username == 'admin' && $password == 'IamLegend2o19'){
-            include ('session.php');
-        } else if ($username == 'rashid' && $password == 'R45h1d') {
-            include ('session.php');
-        } else if ($username == 'stefan' && $password == 'St3f4n') {
-            include ('session.php');
-        } else if ($username == 'sebastian' && $password == 's3b45st1an') {
-            include ('session.php');
-        } else {
-            $error = 'Login oder Passwort inkorrekt';
-            echo $error;
-        }
+        $postUsername = $_POST['username'];
+        $postPassword = $_POST['password'];
 
+        require_once 'pages/inc/dbh.inc.php';
+
+        $sql = "SELECT usersPassword FROM users WHERE deleted_at is NULL and usersUsername = '$postUsername'";
+    
+        $result = mysqli_query($conn, $sql);
+
+        if (mysqli_num_rows($result) > 0) {
+
+            $row = mysqli_fetch_assoc($result);
+
+            $password = $row["usersPassword"];
+
+            if ($postPassword === $password) {
+
+                include ('session.php');
+
+            } else {
+
+                $error = 'Falsches Passwort.';
+                echo $error;
+
+            }
+
+        } else {
+
+            $error = 'Username existiert nicht.';
+            echo $error;
+
+        }
+        
+     
     }
 
 ?>

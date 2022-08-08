@@ -36,8 +36,6 @@
                 'Bewertung: ' . $_POST['bewertung'] . chr(10) .
                 'Nachricht: ' . $_POST['nachricht'];
 
-        // put that data into the [timestamp]formulardaten.txt file in the daten directory
-
         file_put_contents($file, $data);
 
 ?>

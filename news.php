@@ -33,3 +33,21 @@
     ?>
 
 </ul>
+
+<style>
+
+    li:hover {
+        border: solid 0.1em black;
+        color: white;
+        background: none;
+    }
+    li {
+        background: #2b2b2f;
+        border: none;
+        padding: 10px 14px;
+        font-size: 16px;
+        width: 120px;
+        text-align: center;
+    }
+
+</style>

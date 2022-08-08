@@ -44,11 +44,11 @@
                             
                             echo ('<dl>
 
-                                <dt>Überschrift</dt> 
+                                <dt style= margin:10px; >Überschrift</dt> 
                                 <dd>' . $contents['ueberschrift'] . '</dd>
-                                <dt>Datum</dt>
+                                <dt style= margin:10px; >Datum</dt>
                                 <dd>' . $contents['datum'] . '</dd>
-                                <dt>Betrag</dt> 
+                                <dt style= margin:10px; >Betrag</dt> 
                                 <dd>' . $contents['text'] . '</dd>
          
                             </dl>');
