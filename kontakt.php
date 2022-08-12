@@ -7,7 +7,7 @@
 <h2>Kontakt</h2>
 
     <!-- 2.1: Erstelle einen Kontaktformular -->
-    <form action="index.php?page=daten" method="post">
+    <form action="index.php?page=daten" method="POST">
 
         <p>Vorname: <span class="required">* </span><input name="vorname" type="text" aria-describedby="required-description" required></p>
 

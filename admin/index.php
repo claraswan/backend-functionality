@@ -1,22 +1,4 @@
-<!-- Erstelle admin Ordner mit index.php das über den Query-Parameter page Inhalt steuern kann -->
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <?php include("../inc/head-info.php");?>
-    <link rel="stylesheet" href="../styles/main.css">
-
-</head>
-
-<body>
-
-    <?php include("admin_header.php");?>
-
-    <div class="content">
-
-        <?php
+<?php include("admin_header.php");
 
             if (isset($_GET['page'])) {
 
@@ -206,12 +188,5 @@
 
             }
 
-        ?>
 
-    </div>
-    
-    <?php include("../inc/footer.php");?>
-
-</body>
-
-</html>
+include("../inc/footer.php");?>

@@ -1,13 +1,6 @@
 <?php
 
-    session_start();
-
-    if(!isset($_SESSION['username'])) {
-        
-        echo 'Bitte erst <a style="text-decoration: underline" href="index.php?page=login">' . 'einloggen!</a>';
-        die;
-
-    }
+    include('inc/session-tracker.inc.php');
 
     $dir    = __DIR__. '/news_eintraege/';
     $files = scandir($dir);

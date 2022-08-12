@@ -1,18 +1,32 @@
-<div class="header">
+<!DOCTYPE html>
+<html lang="en">
 
-    <div class="logo"><img src="assets/logo.jpg" alt="orange hive logo"></div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OH-Aufgaben</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
 
-    <div class="nav">
+<body>
+    <div class="header">
 
-        <nav>
+        <div class="logo"><img src="assets/logo.jpg" alt="orange hive logo"></div>
 
-            <a href="index.php?page=home">Home</a> |
-            <a href="index.php?page=news">News</a> |
-            <a href="index.php?page=kontakt">Kontakt</a> |
-            <a href="admin/index.php?page=login">Login</a> 
+        <div class="nav">
+
+            <nav>
+
+                <a href="index.php?page=home">Home</a> |
+                <a href="index.php?page=news">News</a> |
+                <a href="index.php?page=kontakt">Kontakt</a> |
+                <a href="admin/index.php?page=login">Login</a> 
+                
+            </nav> 
             
-        </nav> 
-        
+        </div>
+
     </div>
 
-</div>
+    <div class="content">

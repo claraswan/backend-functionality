@@ -1,20 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php include("inc/header.php");
 
-<head>
-
-    <?php include("inc/head-info.php");?>
-
-</head>
-
-<body>
-
-    <?php include("inc/header.php");?>
-
-    <div class="content">
-
-        <?php
-        
         // 1.3: GET Parameter mit 'page' als Name
         // und Seitennamen als Wert erstellen
 
@@ -90,11 +75,4 @@
         }
         
         
-        ?>
-    </div>
-    
-    <?php include("inc/footer.php");?>
-
-</body>
-
-</html>
+ include("inc/footer.php");?>
