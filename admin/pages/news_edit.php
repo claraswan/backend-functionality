@@ -2,25 +2,30 @@
 
     include('inc/session-tracker.inc.php'); 
 
+    $id = $_GET['id'];
+
+    require_once 'inc/dbh.inc.php';
+
+    $sql = "SELECT ueberschrift, id, datum, text FROM news WHERE id=$id";
+   
+    $result = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($result) > 0) {
+
+        $row = mysqli_fetch_assoc($result);
+
+        $ueberschrift = $row["ueberschrift"];
+        $datum = $row["datum"];
+        $text = $row["text"];
+
+    }
+
 ?>
 
 <h2>Der News-Macher</h2>
 
-<form action="index.php?page=news_edit.inc" method="post">
-
-    <?php
-
-        $file = $_GET['file'];
-
-        $jsonContents = file_get_contents(__DIR__ . '/news_eintraege/' . $file);
-        $decodedContents = json_decode($jsonContents, true);
-
-        $ueberschrift = $decodedContents['ueberschrift'];
-        $datum = $decodedContents['datum'];
-        $text = $decodedContents['text'];
-
-    ?>
-
+<form action="index.php?page=news_edit.inc&id=<?php echo $id ?>" method="post">
+    
     <p>Überschrift: <input name="ueberschrift" type="text" value="<?php echo $ueberschrift ?>" required></p>
 
     <p>Datum: <input name="datum" type="date" value="<?php echo $datum ?>" required></p>

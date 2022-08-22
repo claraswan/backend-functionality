@@ -1,37 +1,12 @@
 <!-- 3.6: Erstelle eine Datei login.php für den Administrationsbereich -->
 
-<style> 
-
-    .form {
-        display: flex;
-        margin-right: auto;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .whole_form {
-        background: #2b2b2f;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 8px 20px;
-    }
-
-    h2 {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-</style>
-
-<div class="whole_form">
+<div id="whole_login_form">
 
     <h2>Login</h2>
 
-    <div class="form">
+    <div id="login_form">
 
-        <form action="" method="post">
+        <form class="login" action="" method="post">
 
                 <p><input name="username" type="text" placeholder="Username" required></p>
 

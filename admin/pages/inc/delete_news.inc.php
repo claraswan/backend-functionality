@@ -3,31 +3,31 @@
     session_start();
 
     if(!isset($_SESSION['username'])) {
-        
+
         echo 'Bitte erst <a style="text-decoration: underline" href="index.php?page=login">' . 'einloggen!</a>';
         die;
 
     }
 
+    // 6.5: Benutzer können gelöscht werden
+    
     require_once 'dbh.inc.php';
+    $ueberschrift = $_GET['file'];
 
-    $id = $_GET['id'];
-    $ueberschrift = $_POST['ueberschrift'];
-    $datum = $_POST['datum'];
-    $text = $_POST['text'];
+    // 6.6: Soft delete
+    
+    $sql = "UPDATE news SET deletedAt = CURRENT_TIMESTAMP WHERE ueberschrift='$ueberschrift'";
 
-    $sql = "UPDATE news SET ueberschrift='$ueberschrift', datum='$datum', text='$text' WHERE id=$id";
-  
     if (mysqli_query($conn, $sql)) {
-
+       
         header('location: __DIR__ . ../../index.php?page=news_auflistung');
-        
+
     } else {
-        
-        echo "Error updating record: " . mysqli_error($conn);
-        
+
+        echo "Fehler beim Löschen: " . mysqli_error($conn);
+
     }
-              
+
     mysqli_close($conn);
 
 ?>

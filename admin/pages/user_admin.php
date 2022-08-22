@@ -52,7 +52,7 @@
                     </svg>
                     </a> 
 
-                    <a href="index.php?page=delete_user.inc&user=<?=$userName?>">
+                    <a class="delete" href="index.php?page=delete_user.inc&user=<?=$userName?>">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <line x1="4" y1="7" x2="20" y2="7" />
@@ -79,38 +79,6 @@
 
     ?>
 
-<style>
-
-    .button:hover {
-        border: solid 0.1em black;
-        color: white;
-        background: none;
-    }
-    .button {
-        background: #2b2b2f;
-        font-size: 8px;
-        border: none;
-        padding: 10px 16px;
-        font-size: 18px;
-        width: 140px;
-        margin-top: 60px;
-        text-align: center;
-    }
-    table td{
-        background: #2b2b2f;
-        font-size: 14px;
-        padding: 4px;
-    }
-    .text {
-        font-size: 14px;
-        font-style: normal;
-    }
-    a {
-        margin: 18px 6px;
-    }
-
-  
-</style>
 
 <!-- 6.3: „Benutzer anlegen“ Button -->
-<a class="button" href="index.php?page=create_user"><div class="text">Benutzer anlegen</div></a>
+<a id="benutzer_anlegen" class="button" href="index.php?page=create_user"><div class="text">Benutzer anlegen</div></a>

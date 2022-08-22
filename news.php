@@ -1,53 +1,41 @@
-<style>
-
-    li {
-        list-style-type: none;
-    }
-
-</style>
-
 <!-- 5.4: Im Frontend sollen nun die Inhalte der einzelnen News ausgegeben werden  -->
+<?php
+
+    require_once 'admin/pages/inc/dbh.inc.php';
+    $sql = "SELECT ueberschrift, id, datum, text FROM news WHERE deletedAt is NULL";
+   
+    $result = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($result) > 0) {
+
+?>
+
 <h2>News Page</h2>
 
-<ul style="padding-left: 0px;"> 
+<ul> <?php
+        
+        while ($row = mysqli_fetch_assoc($result)) {
 
-    <?php
+            $ueberschrift = $row["ueberschrift"];
+            $datum = $row["datum"];
+            $text = $row["text"];
+            $id = $row["id"];
 
-        $dir    = __DIR__. '/admin/pages/news_eintraege/';
-        $files = scandir($dir);
-    
-        foreach ($files as $file) {
+?>
 
-            if ($file !== '.' && $file !== '..') {
+            <li class="news_list">
+                <a href="index.php?page=news_detail&id=<?=$id?>"><?=$ueberschrift?></a>
+            </li>
 
-                echo ('<li>
+        <?php
+        }  
 
-                <a href="index.php?page=news_detail&file=' . $file . '">' . $file . '</a>
-                
-                </li> <br>');
+    } else {
+        echo "Keine News";
+    }
+      
+    mysqli_close($conn);
 
-            }
-            
-        }
-    
     ?>
-
+    
 </ul>
-
-<style>
-
-    li:hover {
-        border: solid 0.1em black;
-        color: white;
-        background: none;
-    }
-    li {
-        background: #2b2b2f;
-        border: none;
-        padding: 10px 14px;
-        font-size: 16px;
-        width: 120px;
-        text-align: center;
-    }
-
-</style>

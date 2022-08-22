@@ -4,26 +4,6 @@ include('inc/session-tracker.inc.php');
     
 ?>
 
-<style>
-
-    .save_button {
-        background: #2b2b2f;
-        font-size: 8px;
-        border: none;
-        color: white;
-        padding: 10px 14px;
-        font-size: 14px;
-        width: 120px;
-        margin-top: 40px;
-    }
-    .save_button:hover {
-        border: solid 0.1em black;
-        color: white;
-        background: none;
-    }
-    
-</style>
-
 <!-- 6.3: Formular zum Anlegen eines Benutzers -->
 
 <h2>Benutzer anlegen</h2>
@@ -40,6 +20,6 @@ include('inc/session-tracker.inc.php');
 
     <p>E-Mail: <input name="email" type="text" required></p>
 
-    <p><input type="submit" name="submit" value="Speichern" class="save_button"></p>
+    <p><input type="submit" name="submit" value="Speichern" id="save" class="button"></p>
 
 </form>

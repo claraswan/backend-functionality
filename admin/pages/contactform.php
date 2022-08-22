@@ -21,22 +21,8 @@
                 
                 </li>');
             }
-            
         }
     
     ?>
 
 </ul>
-
-
-<style>
-
-    .special {
-        text-decoration: underline;
-    }
-
-    li {
-        list-style-type: none;
-    }
-
-</style>

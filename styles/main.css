@@ -11,6 +11,29 @@ img {
     height: 160px;
 } 
 
+a {
+    text-decoration: none;
+    color: white;
+}
+
+table td{
+    background: #2b2b2f;
+    font-size: 14px;
+    padding: 4px;
+}
+
+li {
+    list-style-type: none;
+}
+
+ul {
+    padding-left: 0px;
+}
+
+dt {
+    margin: 10px;
+}
+
 .nav {
     padding-right: 24px;
 }
@@ -19,6 +42,10 @@ img {
     display: flex;
     align-items: center;
     gap: 16px;
+}
+
+.edit {
+    margin-right: 16px;
 }
 
 .header {
@@ -36,13 +63,12 @@ img {
     margin-top: 200px;
 }
 
-.copyright {
-    margin: 20px;
+.required {
+    color: red;
 }
 
-a {
-    text-decoration: none;
-    color: white;
+.copyright {
+    margin: 20px;
 }
 
 .content {
@@ -50,4 +76,84 @@ a {
     flex-direction: column;
     align-items: center;
     margin: 112px;
-  }
+}
+
+.news_list:hover {
+    border: solid 0.1em black;
+    color: white;
+    background: none;
+    cursor: pointer;
+}
+
+.news_list {
+    background: #2b2b2f;
+    border: none;
+    padding: 10px 14px;
+    font-size: 16px;
+    width: 120px;
+    text-align: center;
+}
+
+.button:hover {
+    border: solid 0.1em black;
+    color: white;
+    background: none;
+    cursor: pointer;
+}
+
+.button {
+    background: #2b2b2f;
+    border: none;
+    padding: 20px 34px;
+    font-size: 18px;
+    width: 140px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.text {
+    font-size: 14px;
+    font-style: normal;
+}
+
+.special {
+    text-decoration: underline;
+}
+
+#login_form {
+    display: flex;
+    margin-right: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+#whole_login_form {
+    background: #424246;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8px 20px;
+}
+
+#benutzer_anlegen {
+    padding: 10px 16px;
+    margin-top: 60px;
+}
+
+#benutzer_anlegen, .edit, .delete {
+    margin: 18px 6px;
+}
+
+#save {
+    color: white;
+    padding: 10px 14px;
+    font-size: 14px;
+    width: 120px;
+    margin-top: 40px;
+}
+
+#new_news {
+    font-size: 14px;
+    padding: 10px 14px;
+    width: 100px;
+}

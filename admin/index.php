@@ -41,11 +41,11 @@
 
                     case 'news_edit':
                         
-                        if (isset($_GET['file'])) {
+                        if (isset($_GET['id'])) {
 
                             include('pages/news_edit.php');
-                            $file = 'pages/news_eintraege/' . $_GET['file'];
-                            $_SESSION['old_file'] = $file;
+                            $id = $_GET['id'];
+                            $_SESSION['old_file'] = $id;
 
                         } else {
 
@@ -105,6 +105,10 @@
                     
                     case 'delete_user.inc':
                         include('pages/inc/delete_user.inc.php');
+                    break;
+
+                    case 'delete_news.inc':
+                        include('pages/inc/delete_news.inc.php');
                     break;
 
                     case 'logout':
