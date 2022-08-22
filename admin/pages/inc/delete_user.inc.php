@@ -16,7 +16,7 @@
 
     // 6.6: Soft delete
     
-    $sql = "UPDATE users SET deleted_at = CURRENT_TIMESTAMP WHERE usersUsername='$user'";
+    $sql = "UPDATE users SET deletedAt = CURRENT_TIMESTAMP WHERE userName='$user'";
 
     if (mysqli_query($conn, $sql)) {
        

@@ -17,7 +17,7 @@
 
     require_once 'dbh.inc.php';
 
-    $sql = "INSERT INTO users (usersUsername, usersPassword, usersFirstName, usersLastName, usersEmail) VALUES ('$username', '$password', '$firstName', '$lastName', '$email')";
+    $sql = "INSERT INTO users (userName, password, firstName, lastName, email) VALUES ('$username', '$password', '$firstName', '$lastName', '$email')";
 
     if (mysqli_query($conn, $sql)) {
 

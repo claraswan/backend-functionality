@@ -21,7 +21,7 @@
     $email = $_POST['email'];
 
     // assign each POST info to variables
-    $sql = "UPDATE users SET usersUsername='$username', usersPassword='$password', usersFirstName='$firstName', usersLastName='$lastName', usersEmail='$email' WHERE usersId=$id";
+    $sql = "UPDATE users SET userName='$username', password='$password', firstName='$firstName', lastName='$lastName', email='$email' WHERE id=$id";
   
     if (mysqli_query($conn, $sql)) {
 

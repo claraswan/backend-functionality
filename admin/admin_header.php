@@ -21,8 +21,7 @@
 
             <a href="index.php?page=overview">Admin Home</a> |
             <a href="../index.php?page=home">Frontend Home</a> |
-            <a href="index.php?page=logout">Logout</a> |
-            <a href="index.php?page=login">Login</a>
+            <a href="index.php?page=logout">Logout</a>
                 
         </nav> 
 

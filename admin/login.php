@@ -56,7 +56,7 @@
 
         require_once 'pages/inc/dbh.inc.php';
 
-        $sql = "SELECT usersPassword FROM users WHERE deleted_at is NULL and usersUsername = '$postUsername'";
+        $sql = "SELECT password FROM users WHERE deletedAt is NULL and userName = '$postUsername'";
     
         $result = mysqli_query($conn, $sql);
 
@@ -64,7 +64,7 @@
 
             $row = mysqli_fetch_assoc($result);
 
-            $password = $row["usersPassword"];
+            $password = $row["password"];
 
             if ($postPassword === $password) {
 

@@ -6,7 +6,7 @@
 
     require_once 'inc/dbh.inc.php';
 
-    $sql = "SELECT usersUsername, usersPassword, usersId, usersFirstName, usersLastName, usersEmail FROM users WHERE usersID=$id";
+    $sql = "SELECT userName, password, id, firstName, lastName, email FROM users WHERE id=$id";
    
     $result = mysqli_query($conn, $sql);
 
@@ -14,11 +14,11 @@
 
         $row = mysqli_fetch_assoc($result);
 
-        $username = $row["usersUsername"];
-        $passwort = $row["usersPassword"];
-        $vorname = $row["usersFirstName"];
-        $nachname = $row["usersLastName"];
-        $email = $row["usersEmail"];
+        $username = $row["userName"];
+        $passwort = $row["password"];
+        $vorname = $row["firstName"];
+        $nachname = $row["lastName"];
+        $email = $row["email"];
     }
 
 ?>
