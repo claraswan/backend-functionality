@@ -111,6 +111,16 @@ dt {
     text-align: center;
 }
 
+.delete_button, .edit_button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.inline {
+    display: inline;
+}
+
 .text {
     font-size: 14px;
     font-style: normal;

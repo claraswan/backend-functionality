@@ -14,13 +14,7 @@
                 break;
 
                 case 'news_edit':
-                        
-                    if (isset($_GET['id'])) {
-                        include('pages/news_edit.php');
-                    } else {
-                        header('location: index.php?page=news_auflistung');
-                    }
-
+                    include('pages/news_edit.php');
                 break;
 
                 case 'news_maske.inc':
@@ -48,13 +42,7 @@
                 break;
 
                 case 'edit_user.inc':
-
-                    if (isset($_GET['id'])) {
-                        include('pages/inc/edit_user.inc.php');
-                    } else {
-                        header('location: index.php?page=user_admin');
-                    }
-
+                    include('pages/inc/edit_user.inc.php');
                 break;
 
                 case 'create_user':

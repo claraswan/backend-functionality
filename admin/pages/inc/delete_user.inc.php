@@ -1,22 +1,15 @@
 <?php
 
-    session_start();
-
-    if(!isset($_SESSION['username'])) {
-
-        echo 'Bitte erst <a style="text-decoration: underline" href="index.php?page=login">' . 'einloggen!</a>';
-        die;
-
-    }
+    include('inc/session-tracker.inc.php');
 
     // 6.5: Benutzer können gelöscht werden
     
     require_once 'dbh.inc.php';
-    $user = $_GET['user'];
+    $id = $_POST['delete'];
 
     // 6.6: Soft delete
     
-    $sql = "UPDATE users SET deletedAt = CURRENT_TIMESTAMP WHERE userName='$user'";
+    $sql = "UPDATE users SET deletedAt = CURRENT_TIMESTAMP WHERE id=$id";
 
     if (mysqli_query($conn, $sql)) {
        

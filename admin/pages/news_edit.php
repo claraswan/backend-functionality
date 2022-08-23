@@ -2,7 +2,7 @@
 
     include('inc/session-tracker.inc.php'); 
 
-    $id = $_GET['id'];
+    $id = $_POST['edit'];
 
     require_once 'inc/dbh.inc.php';
 
@@ -24,13 +24,15 @@
 
 <h2>Der News-Macher</h2>
 
-<form action="index.php?page=news_edit.inc&id=<?php echo $id ?>" method="post">
+<form action="index.php?page=news_edit.inc" method="post">
     
     <p>Überschrift: <input name="ueberschrift" type="text" value="<?php echo $ueberschrift ?>" required></p>
 
     <p>Datum: <input name="datum" type="date" value="<?php echo $datum ?>" required></p>
 
     <p>Text: <textarea rows="5" cols="24" name="text" required><?php echo $text ?></textarea></p>
+
+    <input type="hidden" name="edit" value="<?=$id?>">
 
     <p><input type="submit" name="submit" value="Fertig"></p>
 

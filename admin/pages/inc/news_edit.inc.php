@@ -1,17 +1,10 @@
 <?php
 
-    session_start();
-
-    if(!isset($_SESSION['username'])) {
-        
-        echo 'Bitte erst <a style="text-decoration: underline" href="index.php?page=login">' . 'einloggen!</a>';
-        die;
-
-    }
+    include('session-tracker.inc.php');
 
     require_once 'dbh.inc.php';
 
-    $id = $_GET['id'];
+    $id = $_POST['edit'];
     $ueberschrift = $_POST['ueberschrift'];
     $datum = $_POST['datum'];
     $text = $_POST['text'];

@@ -1,23 +1,17 @@
 <?php
 
-    session_start();
-
-    if(!isset($_SESSION['username'])) {
-
-        echo 'Bitte erst <a style="text-decoration: underline" href="index.php?page=login">' . 'einloggen!</a>';
-        die;
-
-    }
+    include('session-tracker.inc.php');
 
     $username = $_POST['username'];
     $password = $_POST['password'];
     $firstName = $_POST['firstName'];
     $lastName = $_POST['LastName'];
     $email = $_POST['email'];
+    $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
 
     require_once 'dbh.inc.php';
 
-    $sql = "INSERT INTO users (userName, password, firstName, lastName, email) VALUES ('$username', '$password', '$firstName', '$lastName', '$email')";
+    $sql = "INSERT INTO users (userName, password, firstName, lastName, email) VALUES ('$username', '$hashedPwd', '$firstName', '$lastName', '$email')";
 
     if (mysqli_query($conn, $sql)) {
 

@@ -8,11 +8,11 @@
 
         <form class="login" action="" method="post">
 
-                <p><input name="username" type="text" placeholder="Username" required></p>
+            <p><input name="username" type="text" placeholder="Username" required></p>
 
-                <p><input name="password" type="password" placeholder="Passwort" required></p>
+            <p><input name="password" type="password" placeholder="Passwort" required></p>
 
-                <p><input type="submit" name="login" value="Login"></p>
+            <p><input type="submit" name="login" value="Login"></p>
 
         </form>
 
@@ -39,16 +39,17 @@
 
             $row = mysqli_fetch_assoc($result);
 
-            $password = $row["password"];
+            $pwdHashed = $row["password"];
+            $checkPwd = password_verify($postPassword, $pwdHashed);
 
-            if ($postPassword === $password) {
-
-                include ('session.php');
-
-            } else {
+            if ($checkPwd === false) {
 
                 $error = 'Falsches Passwort.';
                 echo $error;
+
+            } else {
+
+                include ('session.php');
 
             }
 

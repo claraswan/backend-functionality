@@ -1,19 +1,18 @@
 <?php
 
-    include('inc/session-tracker.inc.php');
+    include('session-tracker.inc.php');
 
         // 6.4: eine Editiermaske für die Benutzerdaten
 
     require_once 'dbh.inc.php';
 
-    $id = $_GET['id'];
+    $id = $_POST['edit'];
     $username = $_POST['username'];
     $password = $_POST['password'];
     $firstName = $_POST['firstName'];
     $lastName = $_POST['LastName'];
     $email = $_POST['email'];
 
-    // assign each POST info to variables
     $sql = "UPDATE users SET userName='$username', password='$password', firstName='$firstName', lastName='$lastName', email='$email' WHERE id=$id";
     
     if (mysqli_query($conn, $sql)) {

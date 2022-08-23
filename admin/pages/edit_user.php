@@ -2,7 +2,7 @@
 
     include('inc/session-tracker.inc.php');
 
-    $id = $_GET['id'];
+    $id = $_POST['edit'];
 
     require_once 'inc/dbh.inc.php';
 
@@ -28,7 +28,7 @@
 
 <h2>Benutzer editieren</h2>
 
-<form action="index.php?page=edit_user.inc&id=<?php echo $id ?>" method="post">
+<form action="index.php?page=edit_user.inc" method="post">
 
     <p>Username: <input name="username" type="text" value="<?php echo $username ?>" required></p>
 
@@ -39,6 +39,8 @@
     <p>Nachname: <input name="LastName" type="text" value="<?php echo $nachname ?>" required></p>
 
     <p>E-Mail: <input name="email" type="text" value="<?php echo $email ?>" required></p>
+
+    <input type="hidden" name="edit" value="<?=$id?>">
 
     <p><input type="submit" name="submit" value="Speichern" class="save_button"></p>
 
