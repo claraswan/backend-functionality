@@ -1,15 +1,8 @@
 <?php
 
-    session_start();
+    include('inc/session-tracker.inc.php');
 
-    if(!isset($_SESSION['username'])) {
-
-        echo 'Bitte erst <a style="text-decoration: underline" href="index.php?page=login">' . 'einloggen!</a>';
-        die;
-
-    }
-
-    // 6.4: eine Editiermaske für die Benutzerdaten
+        // 6.4: eine Editiermaske für die Benutzerdaten
 
     require_once 'dbh.inc.php';
 
@@ -22,17 +15,17 @@
 
     // assign each POST info to variables
     $sql = "UPDATE users SET userName='$username', password='$password', firstName='$firstName', lastName='$lastName', email='$email' WHERE id=$id";
-  
+    
     if (mysqli_query($conn, $sql)) {
 
         header('location: __DIR__ . ../../index.php?page=user_admin');
-        
+            
     } else {
-        
+            
         echo "Error updating record: " . mysqli_error($conn);
-        
+            
     }
-              
+                
     mysqli_close($conn);
 
 ?>

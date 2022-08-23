@@ -1,196 +1,108 @@
-<?php include("admin_header.php");
+<?php 
+    include("admin_header.php");
 
-            if (isset($_GET['page'])) {
+        if (isset($_GET['page'])) {
 
-                switch ($_GET['page']) {
+            switch ($_GET['page']) {
 
-                    case 'contactform':
-                        include('pages/contactform.php');
-                    break;
+                case 'contactform':
+                    include('pages/contactform.php');
+                break;
 
-                    case 'news_maske':
+                case 'news_maske':
+                    include('pages/news_maske.php');
+                break;
+
+                case 'news_edit':
                         
-                        if (isset($_GET['file'])) {
+                    if (isset($_GET['id'])) {
+                        include('pages/news_edit.php');
+                    } else {
+                        header('location: index.php?page=news_auflistung');
+                    }
 
-                            include('pages/news_edit.php');
+                break;
 
-                            $file = 'pages/news_eintraege/' . $_GET['file'] ;
-                            
-                            // 5.5: Implementiere eine Editiermaske
-                            
-                            if (file_exists($file)) {
+                case 'news_maske.inc':
+                    include('pages/inc/news_maske.inc.php');
+                break;
 
-                                header('location: index.php?page=news_edit&file=' . $file);
-                                // fill in the existing form on page with the saved data as value so that you can seemingly edit the file
+                case 'news_edit.inc':
+                    include('pages/inc/news_edit.inc.php');
+                break;
 
+                case 'home':
+                    include('pages/overview.php');
+                break;
 
-                            } else {
-                               
-                                echo '<p>Fehler 404 - Seite nicht gefunden</p>';
-                                header($_SERVER["SERVER_PROTOCOL"] . " 404 Not Found");
-                                break;  
+                case 'news_auflistung':
+                    include('pages/news_auflistung.php');
+                break;
 
-                            }
-                        } else {
+                case 'user_admin':
+                    include('pages/user_admin.php');
+                break;
 
-                            include('pages/news_maske.php');
+                case 'edit_user':
+                    include('pages/edit_user.php');
+                break;
 
-                        }
+                case 'edit_user.inc':
 
-                    break;
+                    if (isset($_GET['id'])) {
+                        include('pages/inc/edit_user.inc.php');
+                    } else {
+                        header('location: index.php?page=user_admin');
+                    }
 
-                    case 'news_edit':
-                        
-                        if (isset($_GET['id'])) {
+                break;
 
-                            include('pages/news_edit.php');
-                            $id = $_GET['id'];
-                            $_SESSION['old_file'] = $id;
+                case 'create_user':
+                    include('pages/create_user.php');
+                break;
 
-                        } else {
-
-                            header('location: index.php?page=news_auflistung');
-
-                        }
-
-                    break;
-
-                    case 'news_maske.inc':
-                        include('pages/inc/news_maske.inc.php');
-                    break;
-
-                    case 'news_edit.inc':
-                        include('pages/inc/news_edit.inc.php');
-                    break;
-
-                    case 'home':
-                        include('pages/overview.php');
-                    break;
-
-                    case 'news_auflistung':
-                        include('pages/news_auflistung.php');
-                    break;
-
-                    case 'user_admin':
-                        include('pages/user_admin.php');
-                    break;
-
-                    case 'edit_user':
-                        include('pages/edit_user.php');
-                    break;
-
-                    case 'edit_user.inc':
-
-                        if (isset($_GET['id'])) {
-
-                            include('pages/inc/edit_user.inc.php');
-                            $id = $_GET['id'];
-                            $_SESSION['id'] = $id;
-
-                        } else {
-
-                            header('location: index.php?page=user_admin');
-
-                        }
-
-                    break;
-
-                    case 'create_user':
-                        include('pages/create_user.php');
-                    break;
-
-                    case 'create_user.inc':
-                        include('pages/inc/create_user.inc.php');
-                    break;
+                case 'create_user.inc':
+                    include('pages/inc/create_user.inc.php');
+                break;
                     
-                    case 'delete_user.inc':
-                        include('pages/inc/delete_user.inc.php');
-                    break;
+                case 'delete_user.inc':
+                    include('pages/inc/delete_user.inc.php');
+                break;
 
-                    case 'delete_news.inc':
-                        include('pages/inc/delete_news.inc.php');
-                    break;
+                case 'delete_news.inc':
+                    include('pages/inc/delete_news.inc.php');
+                break;
 
-                    case 'logout':
-                        include('pages/logout.php');
-                    break;
+                case 'logout':
+                    include('pages/logout.php');
+                break;
 
-                    case 'login':
-                        include('login.php');
-                    break;
+                case 'login':
+                    include('login.php');
+                break;
 
-                    case 'overview':
-                        include('pages/overview.php');
-                    break;
+                case 'overview':
+                    include('pages/overview.php');
+                break;
                     
-                    case 'detail':
+                case 'detail':
+                    include('pages/inc/formdaten.inc.php');
+                break;
 
-                        if (isset($_GET['file'])) {
+                default:
 
-                            $file    = 'pages/daten/' . $_GET['file'] ;
+                    if ($_GET['page'] == '') {
+                        include('pages/overview.php');
+                    } else {
+                        include('../inc/err404.inc.php');
+                    }
 
-                            if (file_exists($file)) {
+                break;
+            } 
 
-                                $result = file($file);
-                                $contents = implode("\n",$result);
-                                echo "<pre>".$contents."</pre>";
-
-                            } else{
-
-                                echo '<p>Fehler 404 - Seite nicht gefunden</p>';
-                                header($_SERVER["SERVER_PROTOCOL"] . " 404 Not Found");
-                                break;  
-
-                            }
-                        }
-                        
-                    break;
-
-                    case 'delete':
-
-                        if (isset($_GET['file'])) {
-
-                            $file    = 'pages/news_eintraege/' . $_GET['file'] ;
-                            
-                            // 5.3: Gib eine Funktion die News zu löschen
-                            
-                            if (file_exists($file)) {
-                               
-                                unlink($file);
-                                header('location: index.php?page=news_auflistung');
-
-                            } else {
-                               
-                                echo '<p>Fehler 404 - Seite nicht gefunden</p>';
-                                header($_SERVER["SERVER_PROTOCOL"] . " 404 Not Found");
-                                break;  
-
-                            }
-                        }
-                        
-                    break;
-
-                    default:
-
-                        if ($_GET['page'] == '') {
-
-                            include('pages/overview.php');
-
-                        } else {
-
-                            echo '<p>Fehler 404 - Seite nicht gefunden</p>';
-                            header($_SERVER["SERVER_PROTOCOL"] . " 404 Not Found");
-
-                        }
-
-                    break;
-                } 
-
-            } else {
-
-                include('pages/overview.php');
-
-            }
+        } else {
+            include('pages/overview.php');
+        }
 
 
 include("../inc/footer.php");?>

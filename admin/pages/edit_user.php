@@ -19,6 +19,7 @@
         $vorname = $row["firstName"];
         $nachname = $row["lastName"];
         $email = $row["email"];
+        
     }
 
 ?>
