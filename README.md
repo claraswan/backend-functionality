@@ -9,7 +9,7 @@ This project has the following functionalities:
 -contact form  
 -admin area with login  
 -MariaDB user database 
--MariaDB news database
+-MariaDB news database  
 -session tracking for admin area   
 -CRUD ability for news DB  
 -CRUD ability for users DB
