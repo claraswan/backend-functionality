@@ -1,15 +1,15 @@
 # oh-aufgaben
-Basic backend functionality for a website with a simple frontend written in PHP.
+Basic backend functionality for a website with a simple frontend written in procedural PHP.
 
-Created using the XAMPP Apache distribution. It's free to use: https://www.apachefriends.org/download.html
+To create this project, I used the XAMPP Apache distribution: https://www.apachefriends.org/download.html
 
 This project has the following functionalities: 
   
 -news page  
 -contact form  
 -admin area with login  
--user database (mysql)  
--news database (mysql)  
--session tracking  
--ability to edit and submit news entries  
--ability to add and edit users database directly from the ui  
+-MariaDB user database  
+-MariaDB news database  
+-session tracking for admin area   
+-CRUD ability for news DB  
+-CRUD ability for users DB 
