@@ -4,7 +4,7 @@
     
 ?>
 
-<h2>Benutzer</h2>
+<h2>Users</h2>
 
 <!-- 6.2: Erstelle eine Benutzerverwaltung im Admin-Bereich -->
 
@@ -23,9 +23,9 @@
         <tr>
             <th>ID</th>
             <th>Username</th>
-            <th>Vorname</th>
-            <th>Nachname</th>
-            <th>Optionen</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Options</th>
         </tr>
 
         <?php
@@ -85,7 +85,7 @@
         echo '</table>';
 
     } else {
-        echo "Keine Benutzer";
+        echo "No Users";
     }
       
     mysqli_close($conn);
@@ -94,4 +94,4 @@
 
 
 <!-- 6.3: „Benutzer anlegen“ Button -->
-<a id="benutzer_anlegen" class="button" href="index.php?page=create_user"><div class="text">Benutzer anlegen</div></a>
+<a id="benutzer_anlegen" class="button" href="index.php?page=create_user"><div class="text">Create new user</div></a>

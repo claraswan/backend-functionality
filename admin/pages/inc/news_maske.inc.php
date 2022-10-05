@@ -9,8 +9,8 @@
 
     }
 
-    echo '<p>Wow, was für einen Meisterwerk!</p> <br>';
-    echo '<br> <p>Schau dir die <a style="text-decoration: underline" href="index.php?page=news_auflistung">' . 'anderen Beiträge</a> an</p>';
+    echo '<p>Wow, nice work!</p> <br>';
+    echo '<br> <p>Check out the <a style="text-decoration: underline" href="index.php?page=news_auflistung">' . 'other posts</a></p>';
 
     // if (isset($_POST['submit'])) {
 

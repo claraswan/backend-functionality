@@ -44,7 +44,7 @@
 
             if ($checkPwd === false) {
 
-                $error = 'Falsches Passwort.';
+                $error = 'Wrong password.';
                 echo $error;
 
             } else {
@@ -55,7 +55,7 @@
 
         } else {
 
-            $error = 'Username existiert nicht.';
+            $error = 'Username does not exist.';
             echo $error;
 
         }
