@@ -1,5 +1,5 @@
-# oh-aufgaben
-Basic backend functionality for a website with a simple frontend written in procedural PHP.
+# backend functionality
+Basic backend functionality for a website with a simple frontend written in procedural PHP. OOP refactor to come...
 
 To create this project, I used the XAMPP Apache distribution: https://www.apachefriends.org/download.html
 
